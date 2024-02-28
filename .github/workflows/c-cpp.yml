@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         ref: 'dev'
         submodules: 'recursive'
@@ -24,8 +24,8 @@ jobs:
       with:
         name: firmware
         path: |
-          /app/avaksru/MEEF/build/MEEF.bin
-          /app/avaksru/MEEF/build/partition_table/partition-table.bin 
-          /app/avaksru/MEEF/build/bootloader/bootloader.bin 
-          /app/avaksru/MEEF/build/storage.bin
-          /app/avaksru/MEEF/build/ota_data_initial.bin 
+          /build/MEEF.bin
+          /build/partition_table/partition-table.bin 
+          /build/bootloader/bootloader.bin 
+          /build/storage.bin
+          /build/ota_data_initial.bin 
