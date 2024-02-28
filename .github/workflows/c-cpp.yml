@@ -19,13 +19,8 @@ jobs:
         esp_idf_version: latest
         target: esp32-c6
       
-    - name: Attach artifact
+    - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: firmware
-        path: |
-          /build/MEEF.bin
-          /build/partition_table/partition-table.bin 
-          /build/bootloader/bootloader.bin 
-          /build/storage.bin
-          /build/ota_data_initial.bin 
+       name: built_files
+       path: binaries/
