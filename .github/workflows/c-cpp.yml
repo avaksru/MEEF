@@ -1,9 +1,7 @@
-name: Build Firmware
+name: 'ESP-IDF Project Build'
 
 on:
-  workflow_dispatch:
-       
-  
+  workflow_dispatch:  
 jobs:
   build:
 
@@ -20,4 +18,14 @@ jobs:
       with:
         esp_idf_version: latest
         target: esp32-c6
-        
+      
+    - name: Attach artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: firmware
+        path: |
+          /app/avaksru/MEEF/build/MEEF.bin
+          /app/avaksru/MEEF/build/partition_table/partition-table.bin 
+          /app/avaksru/MEEF/build/bootloader/bootloader.bin 
+          /app/avaksru/MEEF/build/storage.bin
+          /app/avaksru/MEEF/build/ota_data_initial.bin 
